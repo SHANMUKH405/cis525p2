@@ -1,0 +1,152 @@
+/* General body styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container for the registration form and table */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Form title styling */
+h2 {
+    text-align: center;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    font-size: 28px;
+}
+
+/* Input fields styling */
+form label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+form input[type="text"],
+form input[type="email"],
+form select {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form select:focus {
+    border: 1px solid #2980b9;
+    outline: none;
+}
+
+/* Radio buttons styling */
+.radio-group input[type="radio"] {
+    margin-right: 10px;
+}
+
+.radio-group label {
+    margin-bottom: 10px;
+    color: #333;
+}
+
+/* Submit button styling */
+form input[type="submit"] {
+    width: 100%;
+    background-color: #3498db;
+    color: white;
+    padding: 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+/* Button to view registered students */
+.view-list-btn {
+    width: 100%;
+    background-color: #27ae60;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.view-list-btn:hover {
+    background-color: #218c4b;
+}
+
+/* Table styling for registered students */
+table {
+    width: 100%;
+    margin: 20px 0;
+    border-collapse: collapse;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 15px;
+}
+
+th {
+    background-color: #3498db;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+td {
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #eaf1f8;
+    cursor: pointer;
+}
+
+/* Success/Error messages styling */
+p {
+    text-align: center;
+    font-weight: bold;
+    color: #333;
+}
+
+p.success {
+    color: #27ae60;
+}
+
+p.error {
+    color: #c0392b;
+}
