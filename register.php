@@ -6,7 +6,6 @@
     <link rel="stylesheet" href="styles.css">
     <title>Student Registration</title>
     <script src="check_umid_script.js"></script>
-
 </head>
 <body>
     <div class="container">
@@ -43,10 +42,11 @@
 
     <?php
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
-        $servername = "cis-525-p3.cv26uk2u4t1h.us-east-2.rds.amazonaws.com";
-        $username = "admin";  // Update with your RDS username
-        $password = "Bitspilani405";  // Update with your RDS password
-        $dbname = "innodb";
+        // Use environment variables
+        $servername = getenv('DB_HOST');
+        $username = getenv('DB_USER');
+        $password = getenv('DB_PASS');
+        $dbname = getenv('DB_NAME');
 
         // Create connection
         $conn = new mysqli($servername, $username, $password, $dbname);
@@ -84,12 +84,13 @@
                 $stmt_update_slot = $conn->prepare($sql_update_slot);
                 $stmt_update_slot->bind_param("i", $slot_id);
                 $stmt_update_slot->execute();
- // Redirect to the success page
- header("Location: registration_success.html");
- exit();
-} else {
- echo "<p>Error: " . $stmt->error . "</p>";
-}
+
+                // Redirect to the success page
+                header("Location: registration_success.html");
+                exit();
+            } else {
+                echo "<p>Error: " . $stmt->error . "</p>";
+            }
         }
 
         $stmt_check->close();

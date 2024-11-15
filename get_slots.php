@@ -1,8 +1,8 @@
 <?php
-$servername = "cis-525-p3.cv26uk2u4t1h.us-east-2.rds.amazonaws.com";
-$username = "admin";  // Update with your RDS username
-$password = "Bitspilani405";  // Update with your RDS password
-$dbname = "innodb";
+$servername = getenv('DB_HOST');
+$username = getenv('DB_USER');
+$password = getenv('DB_PASS');
+$dbname = getenv('DB_NAME');
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 

@@ -10,10 +10,10 @@
     <div class="container">
         <h2>Registered Students</h2>
         <?php
-        $servername = "cis-525-p3.cv26uk2u4t1h.us-east-2.rds.amazonaws.com";
-        $username = "admin";
-        $password = "Bitspilani405";
-        $dbname = "innodb";
+        $servername = getenv('DB_HOST');
+        $username = getenv('DB_USER');
+        $password = getenv('DB_PASS');
+        $dbname = getenv('DB_NAME');
 
         $conn = new mysqli($servername, $username, $password, $dbname);
         if ($conn->connect_error) {
